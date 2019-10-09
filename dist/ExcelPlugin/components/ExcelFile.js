@@ -96,6 +96,9 @@ var ExcelFile = function (_React$Component) {
                     wb.Sheets[sheet.props.name] = (0, _DataUtil.excelSheetFromAoA)(_this2.createSheetData(sheet));
                 } else {
                     wb.Sheets[sheet.props.name] = (0, _DataUtil.excelSheetFromDataSet)(sheet.props.dataSet);
+                    wb.Sheets[sheet.props.name]['!merges'] = [];
+                    var merge = _tempaXlsx2.default.xlsx.decode_range('A1:F1');
+                    wb.Sheets[sheet.props.name]['!merges'].push(merge);
                 }
             });
 

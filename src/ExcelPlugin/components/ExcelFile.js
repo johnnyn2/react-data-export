@@ -74,6 +74,9 @@ class ExcelFile extends React.Component {
                 wb.Sheets[sheet.props.name] = excelSheetFromAoA(this.createSheetData(sheet));
             } else {
                 wb.Sheets[sheet.props.name] = excelSheetFromDataSet(sheet.props.dataSet);
+                wb.Sheets[sheet.props.name]['!merges'] = [];
+                const merge = XLSX.utils.decode_range('A1:F1');
+                wb.Sheets[sheet.props.name]['!merges'].push(merge);
             }
         });
 
