@@ -1,5 +1,5 @@
 {
-  "name": "react-data-export",
+  "name": "@johnnyn2/react-data-export",
   "version": "0.5.0",
   "main": "dist/index.js",
   "description": "A set of tools to export dataset from react to different formats.",
